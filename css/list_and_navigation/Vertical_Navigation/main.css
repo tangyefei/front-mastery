@@ -1,0 +1,34 @@
+ul.nav {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #486B02;
+	background-color: #8BD400;
+	width: 8.5em;
+}
+
+ul.nav li {
+	display: inline; /*:KLUDGE:Remove large gaps in IE/Win*/
+}
+
+ul.nav a {
+
+	display: block;
+	text-decoration: none;
+	color: #2B3F00;
+	border-top: 1px solid #E4EFD3;
+	border-bottom: 1px solid #486B02;
+	background: url(icon.jpg) no-repeat 5% 50%;
+	padding: 0.3em 1.5em;
+}
+
+ul.nav a.last {
+	border-bottom: none;
+}
+
+ul.nav a:hover,
+ul.nav a:focus,
+ul.nav .selected a {
+	color: #E4FFD3;
+	background-color: #6DA203;	
+}

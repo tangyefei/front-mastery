@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vertical Navigation</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<!--
+		1. 去除ul的项目符号，并设置padding margin为0
+		2. 设置ul的width, background-color, border,
+		3. 之所以选择li>a而不是直接对li应用样式，是为了更好的浏览器兼容性： 暂时没理解display：block移除到外围不行跟浏览器兼容性有什么关系
+		4. 设置a的display,width,color,text-decoration，background-image
+		5. 增加a的background-color, border-bottom, bodder-top
+		6. 特意为最底部重合的边框单独增加一个last样式以消除重叠
+		7. 增加a:hover, a:focus, .selected a时候的color、background-color
+		8 增加在IE6上列表项下有额外空间的Bug
+
+		大致脑袋中过一遍！
+	-->
+	<ul class="nav">
+		<li class="selected"><a href="">Home</a></li>
+		<li><a href="">About</a></li>
+		<li><a href="">Our Service</a></li>
+		<li><a href="">Our Work</a></li>
+		<li><a href="">News</a></li>
+		<li><a href="" class="last">Contact</a></li>
+	</ul>
+</body>
+</html>
