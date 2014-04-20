@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>	
+	<!--
+	花些篇幅交代写这个例子的场景：
+	假定有一个站点，有一个导航指向若干的子栏目，在不同的栏目进行切换时候要对高亮显示当前额栏目，想到的几种做法
+	此处没有想过使用模板框架之类的东西
+
+	1. 多页面格式,各自都有共同nav[可以用js方法动态加载这个Nav作为改进,或者使用模板]
+
+	home.html
+
+	<body id="home">
+		<nav>
+			<ul>
+				<li class="home"><a href="a.html"></a></li>
+				<li class="about"><a href="b.html"></a></li>
+			</ul>
+		</nav>
+		<article></article>
+	</body>
+
+	about.html
+	<body id="about">
+		<nav>
+			<ul>
+				<li class="home"><a href="a.html"></a></li>
+				<li class="about"><a href="b.html"></a></li>
+			</ul>
+		</nav>
+		<article></article>
+	</body>
+
+	可以使用书中说讲解的做法，使用CSS  
+	#home nav .home a,
+	#about nav .about a {
+		// current nav style
+	}
+
+	1. frameset frame做法
+
+	即你现在看到的代码，在1的例子上，需要借助于javascript来修改nav.html中body的id值。
+	相当于：不用重复使用nav.htm + 使用javascript来达成目标。
+	-->
+	<frameset cols="200, *" frameborder="0">
+		<frame name="nav" src="nav.htm"></frame>
+		<frame name="cont" src="modules/main.htm"></frame>
+	</frameset>
+<body>
+</body>
+</html>
