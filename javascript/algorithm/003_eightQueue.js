@@ -20,7 +20,7 @@ function logArray (array) {
 	for (var i = 0; i < array.length; i++) {
 		out += array[i].toString() + '\n';
 	}
-	console.log(array);
+	console.log(out);
 }
 
 function placeQueue(ithQueue) {
@@ -50,7 +50,7 @@ function placeQueue(ithQueue) {
 			for (var r = 0; r < 8; r++) {
 				for (var s = 0; s < 8; s++) {	
 					if(board[r][s] == ithQueue){
-						board[r][s] == -1;
+						board[r][s] = -1;
 					}
 				}
 			}
@@ -62,7 +62,7 @@ count = 0;
 queuePlaces = initArray(92, 8, 0),	
 board = initArray(8, 8, -1);
 // logArray(queuePlaces);
-// logArray(board);
+//logArray(board);
 placeQueue(0);
 
 logArray(queuePlaces);
