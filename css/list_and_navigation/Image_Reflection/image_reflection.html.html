@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pagination navigation</title>
+	<style type="text/css">
+	.imagemap {
+		width: 333px;
+		height: 500px;		
+		position: relative;
+	}
+		
+	.imagemap ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	.imagemap a {
+		position: absolute;
+		display: block;
+		width: 50px;
+		height: 60px;
+		text-indent: -1000em; 
+		background-color: rgba(0,0,0,0);
+	}
+
+	.imagemap .rich a {
+		top: 50px;
+		left: 80px;
+	}
+
+	.imagemap .sophie a {
+		top: 90px;
+		left: 200px;
+	}
+
+	.imagemap .cath a {
+		top: 140px;
+		left: 55px;
+	}
+
+	.imagemap .james a {
+		top: 140px;
+		left: 145px;
+	}
+
+	.imagemap .paul a {
+		top: 165px;
+		left: 245px;
+	}
+
+	.imagemap a:focus,
+	.imagemap a:hover {
+		border: 1px solid #FFF;
+	}
+	</style>
+</head>
+<body>
+	<!-- 
+		直接使用图像映射会将内容与表现融合在一起了，可以使用列表、锚和一些高级的CSS创建简单的分离内容和展示的图像映射。	
+		简单说明步骤：
+		1. 文档结构： Div下有Image，Image中尚有头像若干，另有ul>li>a[title='name' src='http://website']{name}
+		2. 设置图片外围Div大小使完全包裹图片,将位置设置为relative
+		3. 去除ul的样式
+		4. 去除a的样式,设置绝对定位，将文本通过text-indent:-1000em偏移出出视线，设置a为块级元素并设置宽高，否则显示边框（后面要设置）很小
+		5. 设置每个a的具体位置（left\top）
+		6. 设置a激活时候的border样式
+		7. IE的兼容
+			问题：IE不现实内容隐藏在屏幕之外的连接，即使显示设置宽高也不行
+			可以通过给a设置背景颜色，设置透明的即可（不知为何图书作者说不管用）
+			也可以通过给a设置背景图片为透明的图片
+	-->
+	<div class="imagemap">
+		<image width="333" height="500" src="images/nerdcore.jpg" alt="some of the Cleartop222 team"></image>
+		<ul>
+			<li class="rich"><a href="http://www.clagnut.com/" title="Richard Rutter">Richard Rutter</a></li>
+			<li class="sophie"><a href="http://www.wellieswithwings.org/" title="Sophie Barrett">Sophie Barrett</a></li>
+			<li class="cath"><a href="http://www.electricelephant.com/" title="Cathy Jones">Cathy Jones</a></li>
+			<li class="james"><a href="http://www.jeckecko.net/blog/" title="James Box">James Box</a></li>
+			<li class="paul"><a href="http://twitter.com/nicepaul" title="Paul Annett">Paul Annett</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>
