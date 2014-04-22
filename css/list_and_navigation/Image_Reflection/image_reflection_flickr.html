@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>image reflection flickr</title>
+	<style type="text/css">
+	.imagemap {
+		width: 333px;
+		height: 500px;		
+		position: relative;
+	}
+		
+	.imagemap ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	.imagemap a {
+		position: absolute;
+		display: block;
+		color: #000;
+		width: 50px;
+		height: 60px;
+		background-image: url(images/shim.gif);
+		border: 1px solid transparent;
+	}
+
+	.imagemap a .outer {
+		display: block;
+		border: 1px solid transparent;
+	}
+
+
+	.imagemap a .inner {
+		display: block;
+		width: 50px;
+		height: 60px;
+		border: 1px solid transparent;
+	}
+	
+	.imagemap .rich a {
+		top: 50px;
+		left: 80px;
+	}
+
+	.imagemap .sophie a {
+		top: 90px;
+		left: 200px;
+	}
+
+	.imagemap .cath a {
+		top: 140px;
+		left: 55px;
+	}
+
+	.imagemap .james a {
+		top: 140px;
+		left: 145px;
+	}
+
+	.imagemap .paul a {
+		top: 165px;
+		left: 245px;
+	}
+
+	.imagemap a:focus,
+	.imagemap a:hover {
+		border-color: #d4d82d;
+	} 
+
+	.imagemap a .note {
+		position: absolute;
+		bottom: -3em;
+		width: 7em;
+		background-color: #ffc;
+		text-align: center;
+		padding: 0.2em 0.5em;
+		left: -1000em;
+		margin-left: -4em;
+	}
+
+	.imagemap a:hover .note,
+	.imagemap a:focus .note {
+		left: 25px;
+	}
+
+	.imagemap:focus a .outer,
+	.imagemap:hover a .outer,
+	.imagemap a:hover .outer,
+	.imagemap a:hover .outer  {
+		border-color: #000;
+	}
+
+	.imagemap a:focus .inner,
+	.imagemap a:hover .inner,
+	.imagemap a .inner:focus,
+	.imagemap a .inner:hover  {
+		border-color: #fff;
+	}
+
+	</style>
+</head>
+<body>
+	<!-- 
+		在之前的网页基础上进行了改进，目标是模拟flickr当鼠标进入(书中叫翻转)一张图片时，所有包含说明的区域出现时双边框（一黑.inner一白），鼠标悬停框上的时候、突出边框（a再加黄色）显示说明。
+		黑白黄分别对应在 .outer .inner a上,为了先是这样的效果
+		1. 文档结构，使用a>span.outer>span.inner>span.note
+		2. 设置图片外围Div大小使完全包裹图片,将位置设置为relative
+		3. 去除ul的样式
+		4. 去除a的样式,设置绝对定位，设置border-color为transparent，为了鼠标进入图片时改变颜色
+		5. 设置.outer和.inner显示为block, border-color为transparent为了留给鼠标进入区域时改变颜色，.inner设置宽高用来撑开#outer
+		6. 将每个a应用位置定义
+		7. 对每个a激活状态应用border-color, 为黄色
+		8. 对ｓｐａｎ.ｎｏｔｅ进行位置设置，背景设置，文本设置，内边距设置，此处设位置的一些小技巧：结合absolute left margin-left做描述文本.note相对图片的水平居中 + 不同状态(是否激活)设置不同left值以决定是否显示描述文本
+		9. 设置.imagemap:focus .imagemap:hover下.outer和.inner的borde-color
+		10. 浏览器兼容性
+			IE6只支持链接上的悬停，那么作为退化，当链接悬停时将黑白色框也加在a上
+	-->
+	<div class="imagemap">
+		<image width="333" height="500" src="images/nerdcore.jpg" alt="some of the Cleartop222 team"></image>
+		<ul>
+			<li class="rich">
+				<a href="http://www.clagnut.com/" title="Richard Rutter">
+				<span class="outer">
+				<span class="inner">
+				<span class="note">Richard Rutter</span>
+				</span>
+				</span>
+				</a>
+			</li>
+
+			<li class="sophie">
+				<a href="http://www.wellieswithwings.org/" title="Sophie Barrett">
+				<span class="outer">
+				<span class="inner">
+				<span class="note">Sophie Barrett</span>
+				</span>
+				</span>
+				</a>
+			</li>
+
+			<li class="cath">
+				<a href="http://www.electricelephant.com/" title="Cathy Jones">
+				<span class="outer">
+				<span class="inner">
+				<span class="note">Cathy Jones</span>
+				</span>
+				</span>
+				</a>
+			</li>
+
+			<li class="james">
+			<a href="http://www.jeckecko.net/blog/" title="James Box">
+				<span class="outer">
+				<span class="inner">
+				<span class="note">James Box</span>
+				</span>
+				</span>
+			</a>
+			</li>
+
+			<li class="paul">
+				<a href="http://twitter.com/nicepaul" title="Paul Annett">
+				<span class="outer">
+				<span class="inner">
+				<span class="note">Paul Annett</span>
+				</span>
+				</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
